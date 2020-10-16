@@ -1,0 +1,73 @@
+---
+title: "Proyecto Churn"
+author: "ADL -Banco Popular"
+date: "enero - 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Objetivo
+
+Calcular la probabilidad que un cliente con un producto activo en libranza cancele su producto sin haber cumplido el ciclo previamente pactado en la adquisición del producto.
+
+```{r cars}
+summary(cars)
+```
+
+## Gráfico univariado
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+#Ruta
+ruta="E:/Jennyfer_C/04_CHURN/BBDD"
+setwd(ruta)
+load(file="analisis.Rdata")
+BBDD<-OBJETIVO_BURO
+
+```
+
+
+#Histograma
+```{r , echo=FALSE}
+library("summarytools")
+largo_cont<-90
+loop.vector_cont <- 2:largo_cont
+
+for (i in loop.vector_cont){ # Loop over loop.vector
+  # store data in column.i as x
+  x <- BBDD_continua[,i]
+  
+  # Plot histogram of x
+    hist(x,       main = paste(names(BBDD_continua)[i], i), xlab = "")
+  boxplot(x,       main = paste(names(BBDD_continua)[i], i), xlab = "")
+  boxplot(x~BBDD_continua$TARGET_objetivo,       main = paste(names(BBDD_continua)[i], i), xlab = "", col="orange",
+border="brown")
+  }
+```
+
+
+#Histograma
+```{r , echo=FALSE}
+library("summarytools")
+largo_cont<-91
+loop.vector_cont <- 3:largo_cont
+
+for (i in loop.vector_cont){ # Loop over loop.vector
+  # store data in column.i as x
+  x <- BBDD_continua[,i]
+  
+  # Plot histogram of x
+  hist(x,       main = paste(names(BBDD_continua)[i], i), xlab = "")
+  boxplot(x,       main = paste(names(BBDD_continua)[i], i), xlab = "")
+  boxplot(x~BBDD_continua$TARGET_objetivo,       main = paste(names(BBDD_continua)[i], i), xlab = "", col="orange",
+border="brown")
+  
+
+}
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

@@ -1,0 +1,16 @@
+ds = read.csv("http://www.math.smith.edu/r/data/help.csv")
+attach(ds)
+smallds=na.omit(data.frame(-mcs, cesd1, drugrisk, sexrisk, indtot))
+pcavals=prcomp(smallds, scale=TRUE)
+pcavals
+summary(pcavals)
+biplot(pcavals)
+library(rpart)
+sub=as.factor(substance)
+homeless.rpart=rpart(homeless ~ female + i1 +sub + sexrisk+mcs+pcs, method="class", data=ds)
+printcp(homeless.rpart)
+rpart(formula = homeless ~ female + i1 + sub + sexrisk + mcs +
+pcs, data = ds, method = "class")
+#Figure 5.5 displays the tree.
+plot(homeless.rpart)
+text(homeless.rpart)

@@ -1,0 +1,54 @@
+load(url("http://www.um.es/docencia/emc/DEyAE.RData"))
+x<-sewage$day
+y<-sewage$coliform
+#media
+mean(x)
+
+#media por grupo
+tapply(y,x,mean)
+tapply(sewage$coliform, sewage$day, mean)
+mean(x,  trim=0.25)
+
+summary(x)
+
+#Bootstrapping
+library(boot)
+covfun=function(x,i) {sd(x[i])/mean(x[i])}
+res=boot(x,covfun, R=10000)
+print(res)
+plot(res)
+quantile(res$t, c(0.025, 0.975)) #percentile method
+
+
+#intervalo de confianza
+binom.test(sum(x), length(x))
+
+#test de normalidad
+count=table(x)
+count
+percent=count/sum(count)*100
+percent
+rbind(count, percent)
+
+mytab=table(sewage$day,sewage$method)
+mytab
+addmargins(mytab)
+prop.table(mytab,1)
+
+xtabs(~ y+x)
+
+chiq.test(x,y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

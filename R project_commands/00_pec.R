@@ -1,0 +1,7 @@
+datos1<- read.delim("C:/Users/jennyfer.combariza.BFINAMERICA/Desktop/PEC para SARC/13.08 PEC CIFIN.txt", header = TRUE, sep = "\t")
+datos2<- read.delim("C:/Users/jennyfer.combariza.BFINAMERICA/Desktop/PEC para SARC/13.11 PEC CIFIN.txt", header = TRUE, sep = "\t")
+datos3<- read.delim("C:/Users/jennyfer.combariza.BFINAMERICA/Desktop/PEC para SARC/14.02 PEC CIFIN.txt", header = TRUE, sep = "\t")
+datos4<- read.delim("C:/Users/jennyfer.combariza.BFINAMERICA/Desktop/PEC para SARC/14.05 PEC CIFIN.txt", header = TRUE, sep = "\t")
+datos5<- read.delim("C:/Users/jennyfer.combariza.BFINAMERICA/Desktop/PEC para SARC/14.08 PEC CIFIN.txt", header = TRUE, sep = "\t")
+datos6<- read.delim("C:/Users/jennyfer.combariza.BFINAMERICA/Desktop/PEC para SARC/14.11 PEC CIFIN.txt.txt", header = TRUE, sep = "\t")
+datos7<- read.delim("C:/Users/jennyfer.combariza.BFINAMERICA/Desktop/PEC para SARC/15.02 PEC CIFIN.txt", header = TRUE, sep = "\t")

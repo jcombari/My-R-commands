@@ -1,0 +1,21 @@
+getwd() ## Para obtener el directorio actual
+setwd("C:/Jennyfer/08_MONITOR/pruebas") ## Para cambiar el directorio
+getwd() ## Para verificar que se cambió el directorio
+
+
+datos <- read.delim("c:/Jennyfer/08_MONITOR/pruebas/CLIENTES MONITOR NVO MODELO ACTIVIDAD 12 DICIEMBRE.txt", header = TRUE)
+head(datos)
+names(datos)
+attach(datos)
+
+## Indicador Rotación de inventario
+
+if(datos.COSTO_VENTAS != ''){
+  ind_rot_inv <- datos.TOTAL_INVENTARIO * 30/ datos.COSTO_VENTAS     } 
+else {
+  if(client=='public'){
+    tot.price <- net.price * 1.06    # 6% VAT
+  } else {
+    tot.price <- net.price * 1    # 0% VAT
+  }
+}
